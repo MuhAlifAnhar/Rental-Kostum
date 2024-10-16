@@ -21,8 +21,8 @@ class FormController extends Controller
             'pesan' => $request->pesan,
         ];
 
-        Mail::to('sultankautsar20@gmail.com')
-                // ->cc('sultankautsar20@gmail.com')
+        Mail::to('lisatandiayu150904@gmail.com')
+                ->cc('sultankautsar20@gmail.com')
                 ->send(new FormMail($data));
 
         return back()->with('success', 'Pesan Terkirim!');

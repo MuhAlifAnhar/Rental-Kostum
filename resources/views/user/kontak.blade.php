@@ -6,12 +6,15 @@
 
 @section('body')
     @if (Session::has('success'))
-        <div class="swal" data-swal="{{ Session('success') }}"></div>
+        <div class="alert alert-success" role="alert">
+            {{ Session::get('success') }}
+        </div>
     @endif
 
-    <div class="container">
-        <h1 class="text-center pt-3 mb-4">Kontak Kami</h1>
-        <p class="text-center mb-5">Jika Anda memiliki pertanyaan atau membutuhkan informasi lebih lanjut, jangan ragu
+    <div class="container pt-3">
+        <h1 class="text-center pt-5 mb-3 mb-md-4">Kontak Kami</h1>
+        <p class="text-center mb-3 mb-md-4">Jika Anda memiliki pertanyaan atau membutuhkan informasi lebih lanjut, jangan
+            ragu
             untuk
             menghubungi kami melalui salah satu metode di bawah ini.</p>
 

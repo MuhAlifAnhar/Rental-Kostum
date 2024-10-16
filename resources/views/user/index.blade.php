@@ -28,8 +28,8 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-    <div class="row m-0 p-0 pt-5 pb-5">
-        <div class="col-12 col-md-6 m-0 p-0" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+    <div class="row m-0 p-0 pt-md-5 pb-5">
+        <div class="col-12 col-md-6 m-0 p-0 pb-4 pb-md-0" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
             <img src="img/anime4.jpg" alt="" class="d-block img-fluid float-end float-md-end float-none">
         </div>
         <div class="col-12 col-md-6 d-flex justify-content-start justify-content-md-center align-items-center m-0 p-0"
@@ -50,8 +50,8 @@
             </div>
         </div>
     </div>
-    <div class="row m-0 p-0 pt-5 pb-5">
-        <div class="col-12 col-md-6 d-flex justify-content-end justify-content-md-center align-items-center m-0 p-0"
+    <div class="row m-0 p-0 pt-3 pt-md-5 pb-5">
+        <div class="col-12 col-md-6 d-flex justify-content-end justify-content-md-center align-items-center m-0 p-0 pb-4 pb-md-0"
             data-aos="fade-up" data-aos-anchor-placement="center-bottom">
             <div class="m-0 p-0 ms-3 ms-md-0">
                 <h1 class="jas text-bold m-0 p-0 text-center text-md-end">Apa Itu Cosplayer?</h1>

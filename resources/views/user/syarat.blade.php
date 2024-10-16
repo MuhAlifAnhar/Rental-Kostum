@@ -5,8 +5,8 @@
 @endsection
 
 @section('body')
-    <div class="container">
-        <h2 class="text-center pt-3 mb-4">Syarat dan Ketentuan Penyewaan</h2>
+    <div class="container pt-3">
+        <h2 class="text-center pt-5 mb-4">Syarat dan Ketentuan Penyewaan</h2>
         <ol class="terms-list">
             <li>Penyewa harus berusia minimal 18 tahun dan memiliki KTP sebagai bukti identitas.</li>
             <li>Penyewa diwajibkan mengisi formulir sewa yang telah disediakan.</li>

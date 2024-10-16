@@ -21,3 +21,4 @@ Route::get('/kontak', [UserController::class, 'kontak'])->middleware('guest');
 Route::get('/syarat', [UserController::class, 'syarat'])->middleware('guest');
 Route::get('/login', [UserController::class, 'login'])->middleware('guest');
 Route::post('/kontak', [FormController::class, 'kontak'])->middleware('guest');
+Route::get('/register', [UserController::class, 'registrasi'])->middleware('guest');

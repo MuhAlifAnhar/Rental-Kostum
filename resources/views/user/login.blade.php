@@ -27,14 +27,6 @@
                         <div class="form-group">
                             <button type="submit" class="form-control btn btn-primary submit pt-3">Sign In</button>
                         </div>
-                        <div class="form-group d-md-flex">
-                            <div class="w-50">
-                                <label class="checkbox-wrap checkbox-primary">Remember Me
-                                    <input type="checkbox" checked>
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div>
-                        </div>
                     </form>
                     <p class="w-100 text-center">&mdash; Or create an account &mdash;</p>
                     <div class="social d-flex text-center">

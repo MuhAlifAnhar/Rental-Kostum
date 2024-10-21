@@ -1,11 +1,22 @@
-        /* .carousel-item {
+        .carousel-item {
             height: 100vh;
         }
 
         .carousel-item img {
             height: 100%;
             width: 100%;
-        } */
+            object-fit: cover;
+        }
+
+        @media (min-width: 768px) {
+            .carousel-item {
+                height: 100vh;
+            }
+
+            .carousel-item img {
+                object-fit: cover;
+            }
+        }
 
         .baju1{
         padding-top: 100px;

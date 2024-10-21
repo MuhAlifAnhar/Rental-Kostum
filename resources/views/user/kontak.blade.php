@@ -5,12 +5,6 @@
 @endsection
 
 @section('body')
-    @if (Session::has('success'))
-        <div class="alert alert-success" role="alert">
-            {{ Session::get('success') }}
-        </div>
-    @endif
-
     <div class="container pt-3">
         <h1 class="text-center pt-5 mb-3 mb-md-4">Kontak Kami</h1>
         <p class="text-center mb-3 mb-md-4">Jika Anda memiliki pertanyaan atau membutuhkan informasi lebih lanjut, jangan
@@ -39,9 +33,14 @@
                             class="btn btn-outline-dark" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
                     </li>
                 </ul>
+                @if (Session::has('success'))
+                    <div class="alert alert-success alert-md-fixed" role="alert">
+                        {{ Session::get('success') }}
+                    </div>
+                @endif
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-6 pb-md-0 pb-5">
                 <h3>Kirim Pesan</h3>
                 <form action="{{ url('/kontak') }}" method="post">
                     @csrf
@@ -62,4 +61,15 @@
             </div>
         </div>
     </div>
+
+    <style>
+        @media (min-width: 768px) {
+            .alert-md-fixed {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 9999;
+            }
+        }
+    </style>
 @endsection

@@ -15,10 +15,18 @@ use App\Http\Controllers\UserController;
 |
 */
 Route::get('/', [UserController::class, 'index'])->middleware('guest');
+
 Route::get('/dashboard', [UserController::class, 'index'])->middleware('guest');
-Route::get('/kostum', [UserController::class, 'kostum'])->middleware('guest');
+
+// Route::get('/kostum', [UserController::class, 'kostum'])->middleware('guest');
+
 Route::get('/kontak', [UserController::class, 'kontak'])->middleware('guest');
-Route::get('/syarat', [UserController::class, 'syarat'])->middleware('guest');
-Route::get('/login', [UserController::class, 'login'])->middleware('guest');
+
 Route::post('/kontak', [FormController::class, 'kontak'])->middleware('guest');
+
+Route::get('/syarat', [UserController::class, 'syarat'])->middleware('guest');
+
+Route::get('/login', [UserController::class, 'login'])->middleware('guest');
+
 Route::get('/register', [UserController::class, 'registrasi'])->middleware('guest');
+Route::post('/register', [UserController::class, 'store']);

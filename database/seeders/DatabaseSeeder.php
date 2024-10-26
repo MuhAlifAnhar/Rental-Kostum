@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use PhpParser\Node\Expr\Cast\String_;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,5 +16,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
+
+        DB::table('roles')->insert([
+            'nama_role' => 'user'
+        ]);
     }
 }

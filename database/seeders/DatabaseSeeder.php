@@ -18,7 +18,11 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
 
         DB::table('roles')->insert([
-            'nama_role' => 'user'
+            'nama_role' => 'admin'
+        ]);
+
+        DB::table('roles')->insert([
+            'nama_role' => 'superadmin'
         ]);
     }
 }

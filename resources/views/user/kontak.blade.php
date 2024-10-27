@@ -34,7 +34,7 @@
                     </li>
                 </ul>
                 @if (Session::has('success'))
-                    <div class="alert alert-success alert-md-fixed" role="alert">
+                    <div class="alert alert-success alert-fixed" role="alert">
                         {{ Session::get('success') }}
                     </div>
                 @endif

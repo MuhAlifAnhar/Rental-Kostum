@@ -32,6 +32,26 @@ class UserController extends Controller
         return view("user.register");
     }
 
+    public function logine(Request $request){
+        $validasi = $request->validate([
+            'email' => ['required','email:dns'],
+            'password' => ['required']
+        ]);
+         if(Auth::attempt($validasi)){
+        //  jika dia guru
+          if(Auth::user()->role_id === 1 ){
+                $request->session()->regenerate();
+                return redirect()->intended('/admin');
+           }
+        //    if(Auth::user()->role_id === 2 ){
+        //         $request->session()->regenerate();
+        //         return redirect()->intended('/admin');
+        //    }
+         }
+
+         return back()->with('error','Login gagal!');
+    }
+
      public function store(Request $request){
         $validatedData = $request->validate([
             'nama' => ['required','max:255'],

@@ -10,8 +10,13 @@
             <div class="col-md-6 text-center mb-5">
                 <h2 class="heading-section">Login Admin</h2>
                 @if (Session::has('success'))
-                    <div class="alert alert-success alert-md-fixed" role="alert">
+                    <div class="alert alert-success alert-fixed" role="alert">
                         {{ Session::get('success') }}
+                    </div>
+                @endif
+                @if (Session::has('error'))
+                    <div class="alert alert-danger alert-fixed" role="alert">
+                        {{ Session::get('error') }}
                     </div>
                 @endif
             </div>
@@ -21,8 +26,15 @@
                 <div class="login-wrap p-0">
                     <h3 class="mb-4 text-center">Have an account?</h3>
                     <form action="{{ url('/login') }}" class="signin-form" method="post">
+                        @csrf
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Username" name="username" required>
+                            <input type="email" class="form-control @error('email')is-invalid @enderror"
+                                value="{{ old('email') }}" placeholder="Email" name="email" required>
+                            @error('email')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <input id="password-field" type="password" class="form-control" placeholder="Password"

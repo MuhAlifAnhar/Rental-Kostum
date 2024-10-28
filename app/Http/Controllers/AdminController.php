@@ -10,14 +10,11 @@ class AdminController extends Controller
         private FileService $fileService,
     ) {
          // Admin dan Operator bisa mengakses `index` dan `show`
-        $this->middleware('can:semuaRole', ['only' => ['index']]);
-
-        // Operator bisa mengakses `create`, `edit`, `store`, `update`, dan `destroy`
-        $this->middleware('can:isOperator', ['only' => ['create', 'edit', 'store', 'update', 'destroy']]);
+        $this->middleware('can:semuaRole', ['only' => ['indexe']]);
     }
 
     function indexe(){
-        $this->authorize('isAdmin');
+        $this->authorize('semuaRole');
         return view('admin.index');
     }
 }

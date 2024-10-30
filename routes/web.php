@@ -21,6 +21,8 @@ Route::get('/admin', [SuperController::class, 'indexe'])->middleware('auth');
 Route::get('/', [UserController::class, 'index'])->middleware('guest');
 Route::post('/login', [UserController::class, 'logine']);
 
+Route::post('/logout', [UserController::class, 'logout']);
+
 Route::get('/dashboard', [UserController::class, 'index'])->middleware('guest');
 
 // Route::get('/kostum', [UserController::class, 'kostum'])->middleware('guest');

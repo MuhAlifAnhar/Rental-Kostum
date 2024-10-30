@@ -48,10 +48,14 @@
     <!-- Sidebar -->
     <div class="sidebar">
         <h3 class="text-center">Admin Panel</h3>
-        <a href="#dashboard">Dashboard</a>
-        <a href="#users">Users</a>
-        <a href="#settings">Settings</a>
-        <a href="#logout">Logout</a>
+        <a href="#dashboard" class="nav-link text-white">Dashboard</a>
+        <a href="#users" class="nav-link text-white">Users</a>
+        <a href="#settings" class="nav-link text-white">Settings</a>
+        <form action="/logout" method="post" class="nav-link p-0 mt-2">
+            @csrf
+            <button type="submit" class="btn btn-danger w-100">Logout</button>
+        </form>
+
     </div>
 
     <!-- Main Content -->
@@ -69,7 +73,12 @@
                             <a class="nav-link" href="#">Profile</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Logout</a>
+                            <form action="/logout" method="post" class="nav-link">
+                                @csrf
+                                <button type="submit" class="dropdown-item">
+                                    Logout
+                                </button>
+                            </form>
                         </li>
                     </ul>
                 </div>

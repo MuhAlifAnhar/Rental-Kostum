@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Toko;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
@@ -37,19 +38,26 @@ class UserController extends Controller
             'email' => ['required','email:dns'],
             'password' => ['required']
         ]);
-         if(Auth::attempt($validasi)){
+        if(Auth::attempt($validasi)){
         //  jika dia guru
-          if(Auth::user()->role_id === 1 ){
+            if(Auth::user()->role_id === 1 ){
+                if(Auth::user()->toko){
+                    if(Auth::user()->toko->id_admin === Auth::user()->id ){
+                        $request->session()->regenerate();
+                        return redirect()->intended('/admin');
+                    }else {
+                        return back()->with('error','Login gagal! Anda Bukan Admin Toko');
+                    }
+                }else {
+                    return back()->with('error', 'Login gagal! Anda tidak memiliki toko.');
+                }
+            }
+            if(Auth::user()->role_id === 2 ){
                 $request->session()->regenerate();
                 return redirect()->intended('/admin');
-           }
-        //    if(Auth::user()->role_id === 2 ){
-        //         $request->session()->regenerate();
-        //         return redirect()->intended('/admin');
-        //    }
-         }
-
-         return back()->with('error','Login gagal!');
+            }
+        }
+        return back()->with('error','Login gagal! Username atau Password Anda Salah');
     }
 
      public function store(Request $request){

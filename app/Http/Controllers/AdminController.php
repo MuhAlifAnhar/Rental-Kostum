@@ -6,9 +6,7 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function __construct(
-        private FileService $fileService,
-    ) {
+    public function __construct() {
          // Admin dan Operator bisa mengakses `index` dan `show`
         $this->middleware('can:semuaRole', ['only' => ['indexe']]);
     }

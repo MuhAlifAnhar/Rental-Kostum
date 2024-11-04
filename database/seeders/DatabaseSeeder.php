@@ -24,5 +24,19 @@ class DatabaseSeeder extends Seeder
         DB::table('roles')->insert([
             'nama_role' => 'superadmin'
         ]);
+
+        DB::table('users')->insert([
+            'nama' => 'lisa',
+            'email' => 'lisa@gmail.com',
+            'password' => bcrypt('lisa12345'),
+            'role_id' => 2
+        ]);
+
+        DB::table('users')->insert([
+            'nama' => 'toko',
+            'email' => 'toko@gmail.com',
+            'password' => bcrypt('toko12345'),
+            'role_id' => 1
+        ]);
     }
 }

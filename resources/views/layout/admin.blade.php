@@ -98,18 +98,23 @@
         </span>
         <h3 class="text-center">Admin Panel</h3>
         @can('isSuper')
-            <a href="/admin" class="nav-link text-white {{ Request::is('admin') ? 'active' : '' }}"><i
-                    class="fas fa-tachometer-alt"></i> Dashboard</a>
-            <a href="/toko" class="nav-link text-white {{ Request::is('toko') ? 'active' : '' }}"><i
-                    class="fas fa-store"></i> Toko</a>
-            <a href="/request" class="nav-link text-white {{ Request::is('request') ? 'active' : '' }}"><i
-                    class="fas fa-inbox"></i> Request Toko</a>
+            <a href="/admin" class="nav-link text-white {{ Request::is('admin') ? 'active' : '' }}">
+                <i class="fas fa-tachometer-alt"></i> Dashboard
+            </a>
+            <a href="/admin/toko" class="nav-link text-white {{ Request::is('admin/toko') ? 'active' : '' }}">
+                <i class="fas fa-store"></i> Toko
+            </a>
+            <a href="/admin/request" class="nav-link text-white {{ Request::is('admin/request') ? 'active' : '' }}">
+                <i class="fas fa-inbox"></i> Request Toko
+            </a>
         @endcan
         @can('isAdmin')
-            <a href="/produk" class="nav-link text-white {{ Request::is('produk') ? 'active' : '' }}"><i
-                    class="fas fa-box"></i> Produk</a>
+            <a href="/admin/produk" class="nav-link text-white {{ Request::is('admin/produk') ? 'active' : '' }}">
+                <i class="fas fa-box"></i> Produk
+            </a>
         @endcan
     </div>
+
 
     <button class="open-btn" onclick="toggleSidebar()">
         <i class="fas fa-bars"></i>

@@ -38,5 +38,10 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('toko12345'),
             'role_id' => 1
         ]);
+
+        DB::table('toko')->insert([
+            'nama_toko' => 'Turu Rent',
+            'id_admin' => 2
+        ]);
     }
 }

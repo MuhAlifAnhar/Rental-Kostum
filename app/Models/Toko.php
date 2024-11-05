@@ -13,4 +13,9 @@ class Toko extends Model
     protected $guarded = [
         'id'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id_admin'); // 'id_admin' adalah foreign key di tabel toko
+    }
 }

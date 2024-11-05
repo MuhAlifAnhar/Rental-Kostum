@@ -16,7 +16,7 @@
         <div class="row">
             @can('isSuper')
                 <div class="col-md-4">
-                    <a href="/toko" class="text-decoration-none">
+                    <a href="/admin/toko" class="text-decoration-none">
                         <div class="card text-white bg-primary mb-3">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -28,7 +28,7 @@
                     </a>
                 </div>
                 <div class="col-md-4">
-                    <a href="/request" class="text-decoration-none">
+                    <a href="/admin/request" class="text-decoration-none">
                         <div class="card text-white bg-success mb-3">
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -42,7 +42,7 @@
             @endcan
             @can('isAdmin')
                 <div class="col-md-4">
-                    <a href="/produk" class="text-decoration-none">
+                    <a href="/admin/produk" class="text-decoration-none">
                         <div class="card text-white bg-warning mb-3">
                             <div class="card-body">
                                 <h5 class="card-title">

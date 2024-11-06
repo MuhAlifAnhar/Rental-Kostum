@@ -41,7 +41,7 @@ class UserController extends Controller
         if(Auth::attempt($validasi)){
         //  jika dia guru
             if(Auth::user()->role_id === 1 ){
-                if(Auth::user()->toko->id_admin === Auth::user()->id){
+                if(Auth::user()->toko){
                     if(Auth::user()->toko->id_admin === Auth::user()->id ){
                         $request->session()->regenerate();
                         return redirect()->intended('/admin');

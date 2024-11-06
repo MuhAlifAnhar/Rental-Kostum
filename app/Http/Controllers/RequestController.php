@@ -85,20 +85,22 @@ class RequestController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user,$id)
     {
-        $baju = \App\Models\Baju::where('id_admin', $id)->first();
-        if ($baju) {
-            $baju->delete();
-        }
+        // $baju = \App\Models\Baju::where('id_admin', $id)->first();
+        // if ($baju) {
+        //     $baju->delete();
+        // }
 
-        $toko = \App\Models\Toko::where('id_admin', $id)->first();
-        if ($toko) {
-            $toko->delete();
-        }
+        // $toko = \App\Models\Toko::where('id_admin', $id)->first();
+        // if ($toko) {
+        //     $toko->delete();
+        // }
 
-        \App\Models\User::destroy($id);
+        // \App\Models\User::destroy($id);
 
-        return redirect('/super/akun')->with('sukses', 'Akun telah dihapus!');
+        $user::where('id', $id)->delete();
+
+        return redirect('/admin/request')->with('sukses', 'Akun telah dihapus!');
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Toko;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class TokoController extends Controller
@@ -35,7 +36,7 @@ class TokoController extends Controller
 
         $admin = User::where('role_id', 1)->get();
 
-        return view('tokocreate', [
+        return view('admin.tokocreate', [
             'admin' => $admin
         ]);
     }
@@ -103,14 +104,14 @@ class TokoController extends Controller
      */
     public function destroy($id)
     {
-        $baju = \App\Models\Baju::where('id_toko', $id)->first();
+        // $baju = \App\Models\Baju::where('id_toko', $id)->first();
 
-        if ($baju) {
-            $baju->delete();
-        }
+        // if ($baju) {
+        //     $baju->delete();
+        // }
 
         \App\Models\Toko::destroy($id);
 
-        return redirect('/admin/namatoko')->with('sukses', 'Toko telah dihapus!');
+        return redirect('/admin/toko')->with('sukses', 'Toko telah dihapus!');
     }
 }

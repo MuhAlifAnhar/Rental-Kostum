@@ -6,13 +6,13 @@
 
 @section('body')
     @if (Session::has('sukses'))
-        <div class="alert alert-success alert-fixed" role="alert">
-            {{ Session::get('sukses') }}
+        <div class="alert alert-success my-3 alert-fixed" role="alert">
+            <i class="fas fa-check-circle"></i> {{ Session::get('sukses') }}
         </div>
     @endif
 
-    <div class="col-lg-12 mt-4">
-        <table id="myTable" class="display">
+    <div class="table-responsive col-lg-12 mt-4">
+        <table id="myTable" class="table table-striped table-bordered display">
             <thead>
                 <tr>
                     <th>No</th>
@@ -29,9 +29,9 @@
                             <form action="{{ url('/admin/request/' . $nama->id) }}" method="post">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="badge bg-danger border-0"
+                                <button type="submit" class="btn btn-sm btn-danger"
                                     onclick="return confirm('Kamu yakin mau hapus akun?')">
-                                    <span data-feather="x-circle"></span> Hapus
+                                    <i class="fas fa-trash-alt"></i> Hapus
                                 </button>
                             </form>
                         </td>

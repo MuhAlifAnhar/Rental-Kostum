@@ -50,44 +50,124 @@
                                 <div class="col-lg-12">
                                     <div class="row g-4">
                                         <div class="col-sm-12 col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.1s">
-                                            <div class="event-img position-relative">
-                                                <img class="img-fluid rounded w-100" src="img/anime1.jpg" alt="">
-                                            </div>
+                                            <a href="" class="text-decoration-none">
+                                                <div class="card text-center" style="width: 18rem;">
+                                                    <img src="img/anime1.jpg" class="card-img-top" alt="Kostum">
+                                                    <div class="card-body m-0 p-0">
+                                                        <p class="card-text bold">kostum Raiden Shogun</p>
+                                                        <p class="card-text">Rp. 100.000
+                                                        </p>
+                                                        <p class="card-footer bg-success bold sewa text-white">
+                                                            <i class="fas fa-shopping-cart"></i> Ready
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </a>
                                         </div>
                                         <div class="col-sm-12 col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.3s">
-                                            <div class="event-img position-relative">
-                                                <img class="img-fluid rounded w-100" src="img/anime1.jpg" alt="">
-                                            </div>
+                                            <a href="" class="text-decoration-none">
+                                                <div class="card text-center" style="width: 18rem;">
+                                                    <img src="img/anime1.jpg" class="card-img-top" alt="Kostum">
+                                                    <div class="card-body m-0 p-0">
+                                                        <p class="card-text bold">kostum Raiden Shogun</p>
+                                                        <p class="card-text">Rp. 100.000
+                                                        </p>
+                                                        <p class="card-footer bg-success bold sewa text-white">
+                                                            <i class="fas fa-shopping-cart"></i> Ready
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </a>
                                         </div>
                                         <div class="col-sm-12 col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.5s">
-                                            <div class="event-img position-relative">
-                                                <img class="img-fluid rounded w-100" src="img/anime1.jpg" alt="">
-                                            </div>
+                                            <a href="" class="text-decoration-none">
+                                                <div class="card text-center" style="width: 18rem;">
+                                                    <img src="img/anime1.jpg" class="card-img-top" alt="Kostum">
+                                                    <div class="card-body m-0 p-0">
+                                                        <p class="card-text bold">kostum Raiden Shogun</p>
+                                                        <p class="card-text">Rp. 100.000
+                                                        </p>
+                                                        <p class="card-footer bg-success bold sewa text-white">
+                                                            <i class="fas fa-shopping-cart"></i> Ready
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </a>
                                         </div>
                                         <div class="col-sm-12 col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.7s">
-                                            <div class="event-img position-relative">
-                                                <img class="img-fluid rounded w-100" src="img/anime1.jpg" alt="">
-                                            </div>
+                                            <a href="" class="text-decoration-none">
+                                                <div class="card text-center" style="width: 18rem;">
+                                                    <img src="img/anime1.jpg" class="card-img-top" alt="Kostum">
+                                                    <div class="card-body m-0 p-0">
+                                                        <p class="card-text bold">kostum Raiden Shogun</p>
+                                                        <p class="card-text">Rp. 100.000
+                                                        </p>
+                                                        <p class="card-footer bg-success bold sewa text-white">
+                                                            <i class="fas fa-shopping-cart"></i> Ready
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </a>
                                         </div>
                                         <div class="col-sm-12 col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.1s">
-                                            <div class="event-img position-relative">
-                                                <img class="img-fluid rounded w-100" src="img/anime1.jpg" alt="">
-                                            </div>
+                                            <a href="" class="text-decoration-none">
+                                                <div class="card text-center" style="width: 18rem;">
+                                                    <img src="img/anime1.jpg" class="card-img-top" alt="Kostum">
+                                                    <div class="card-body m-0 p-0">
+                                                        <p class="card-text bold">kostum Raiden Shogun</p>
+                                                        <p class="card-text">Rp. 100.000
+                                                        </p>
+                                                        <p class="card-footer bg-success bold sewa text-white">
+                                                            <i class="fas fa-shopping-cart"></i> Ready
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </a>
                                         </div>
                                         <div class="col-sm-12 col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.3s">
-                                            <div class="event-img position-relative">
-                                                <img class="img-fluid rounded w-100" src="img/anime1.jpg" alt="">
-                                            </div>
+                                            <a href="" class="text-decoration-none">
+                                                <div class="card text-center" style="width: 18rem;">
+                                                    <img src="img/anime1.jpg" class="card-img-top" alt="Kostum">
+                                                    <div class="card-body m-0 p-0">
+                                                        <p class="card-text bold">kostum Raiden Shogun</p>
+                                                        <p class="card-text">Rp. 100.000
+                                                        </p>
+                                                        <p class="card-footer bg-success bold sewa text-white">
+                                                            <i class="fas fa-shopping-cart"></i> Ready
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </a>
                                         </div>
                                         <div class="col-sm-12 col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.5s">
-                                            <div class="event-img position-relative">
-                                                <img class="img-fluid rounded w-100" src="img/anime1.jpg" alt="">
-                                            </div>
+                                            <a href="" class="text-decoration-none">
+                                                <div class="card text-center" style="width: 18rem;">
+                                                    <img src="img/anime1.jpg" class="card-img-top" alt="Kostum">
+                                                    <div class="card-body m-0 p-0">
+                                                        <p class="card-text bold">kostum Raiden Shogun</p>
+                                                        <p class="card-text">Rp. 100.000
+                                                        </p>
+                                                        <p class="card-footer bg-success bold sewa text-white">
+                                                            <i class="fas fa-shopping-cart"></i> Ready
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </a>
                                         </div>
                                         <div class="col-sm-12 col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.7s">
-                                            <div class="event-img position-relative">
-                                                <img class="img-fluid rounded w-100" src="img/anime1.jpg" alt="">
-                                            </div>
+                                            <a href="" class="text-decoration-none">
+                                                <div class="card text-center" style="width: 18rem;">
+                                                    <img src="img/anime1.jpg" class="card-img-top" alt="Kostum">
+                                                    <div class="card-body m-0 p-0">
+                                                        <p class="card-text bold">kostum Raiden Shogun</p>
+                                                        <p class="card-text">Rp. 100.000
+                                                        </p>
+                                                        <p class="card-footer bg-success bold sewa text-white">
+                                                            <i class="fas fa-shopping-cart"></i> Ready
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -98,14 +178,34 @@
                                 <div class="col-lg-12">
                                     <div class="row g-4">
                                         <div class="col-sm-12 col-md-6 col-lg-3">
-                                            <div class="event-img position-relative">
-                                                <img class="img-fluid rounded w-100" src="img/anime1.jpg" alt="">
-                                            </div>
+                                            <a href="" class="text-decoration-none">
+                                                <div class="card text-center" style="width: 18rem;">
+                                                    <img src="img/anime1.jpg" class="card-img-top" alt="Kostum">
+                                                    <div class="card-body m-0 p-0">
+                                                        <p class="card-text bold">kostum Raiden Shogun</p>
+                                                        <p class="card-text">Rp. 100.000
+                                                        </p>
+                                                        <p class="card-footer bg-success bold sewa text-white">
+                                                            <i class="fas fa-shopping-cart"></i> Ready
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </a>
                                         </div>
                                         <div class="col-sm-12 col-md-6 col-lg-3">
-                                            <div class="event-img position-relative">
-                                                <img class="img-fluid rounded w-100" src="img/anime1.jpg" alt="">
-                                            </div>
+                                            <a href="" class="text-decoration-none">
+                                                <div class="card text-center" style="width: 18rem;">
+                                                    <img src="img/anime1.jpg" class="card-img-top" alt="Kostum">
+                                                    <div class="card-body m-0 p-0">
+                                                        <p class="card-text bold">kostum Raiden Shogun</p>
+                                                        <p class="card-text">Rp. 100.000
+                                                        </p>
+                                                        <p class="card-footer bg-success bold sewa text-white">
+                                                            <i class="fas fa-shopping-cart"></i> Ready
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -116,14 +216,34 @@
                                 <div class="col-lg-12">
                                     <div class="row g-4">
                                         <div class="col-sm-12 col-md-6 col-lg-3">
-                                            <div class="event-img position-relative">
-                                                <img class="img-fluid rounded w-100" src="img/anime1.jpg" alt="">
-                                            </div>
+                                            <a href="" class="text-decoration-none">
+                                                <div class="card text-center" style="width: 18rem;">
+                                                    <img src="img/anime1.jpg" class="card-img-top" alt="Kostum">
+                                                    <div class="card-body m-0 p-0">
+                                                        <p class="card-text bold">kostum Raiden Shogun</p>
+                                                        <p class="card-text">Rp. 100.000
+                                                        </p>
+                                                        <p class="card-footer bg-success bold sewa text-white">
+                                                            <i class="fas fa-shopping-cart"></i> Ready
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </a>
                                         </div>
                                         <div class="col-sm-12 col-md-6 col-lg-3">
-                                            <div class="event-img position-relative">
-                                                <img class="img-fluid rounded w-100" src="img/anime1.jpg" alt="">
-                                            </div>
+                                            <a href="" class="text-decoration-none">
+                                                <div class="card text-center" style="width: 18rem;">
+                                                    <img src="img/anime1.jpg" class="card-img-top" alt="Kostum">
+                                                    <div class="card-body m-0 p-0">
+                                                        <p class="card-text bold">kostum Raiden Shogun</p>
+                                                        <p class="card-text">Rp. 100.000
+                                                        </p>
+                                                        <p class="card-footer bg-success bold sewa text-white">
+                                                            <i class="fas fa-shopping-cart"></i> Ready
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -134,14 +254,34 @@
                                 <div class="col-lg-12">
                                     <div class="row g-4">
                                         <div class="col-sm-12 col-md-6 col-lg-3">
-                                            <div class="event-img position-relative">
-                                                <img class="img-fluid rounded w-100" src="img/anime1.jpg" alt="">
-                                            </div>
+                                            <a href="" class="text-decoration-none">
+                                                <div class="card text-center" style="width: 18rem;">
+                                                    <img src="img/anime1.jpg" class="card-img-top" alt="Kostum">
+                                                    <div class="card-body m-0 p-0">
+                                                        <p class="card-text bold">kostum Raiden Shogun</p>
+                                                        <p class="card-text">Rp. 100.000
+                                                        </p>
+                                                        <p class="card-footer bg-success bold sewa text-white">
+                                                            <i class="fas fa-shopping-cart"></i> Ready
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </a>
                                         </div>
                                         <div class="col-sm-12 col-md-6 col-lg-3">
-                                            <div class="event-img position-relative">
-                                                <img class="img-fluid rounded w-100" src="img/anime1.jpg" alt="">
-                                            </div>
+                                            <a href="" class="text-decoration-none">
+                                                <div class="card text-center" style="width: 18rem;">
+                                                    <img src="img/anime1.jpg" class="card-img-top" alt="Kostum">
+                                                    <div class="card-body m-0 p-0">
+                                                        <p class="card-text bold">kostum Raiden Shogun</p>
+                                                        <p class="card-text">Rp. 100.000
+                                                        </p>
+                                                        <p class="card-footer bg-success bold sewa text-white">
+                                                            <i class="fas fa-shopping-cart"></i> Ready
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -152,14 +292,34 @@
                                 <div class="col-lg-12">
                                     <div class="row g-4">
                                         <div class="col-sm-12 col-md-6 col-lg-3">
-                                            <div class="event-img position-relative">
-                                                <img class="img-fluid rounded w-100" src="img/anime1.jpg" alt="">
-                                            </div>
+                                            <a href="" class="text-decoration-none">
+                                                <div class="card text-center" style="width: 18rem;">
+                                                    <img src="img/anime1.jpg" class="card-img-top" alt="Kostum">
+                                                    <div class="card-body m-0 p-0">
+                                                        <p class="card-text bold">kostum Raiden Shogun</p>
+                                                        <p class="card-text">Rp. 100.000
+                                                        </p>
+                                                        <p class="card-footer bg-success bold sewa text-white">
+                                                            <i class="fas fa-shopping-cart"></i> Ready
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </a>
                                         </div>
                                         <div class="col-sm-12 col-md-6 col-lg-3">
-                                            <div class="event-img position-relative">
-                                                <img class="img-fluid rounded w-100" src="img/anime1.jpg" alt="">
-                                            </div>
+                                            <a href="" class="text-decoration-none">
+                                                <div class="card text-center" style="width: 18rem;">
+                                                    <img src="img/anime1.jpg" class="card-img-top" alt="Kostum">
+                                                    <div class="card-body m-0 p-0">
+                                                        <p class="card-text bold">kostum Raiden Shogun</p>
+                                                        <p class="card-text">Rp. 100.000
+                                                        </p>
+                                                        <p class="card-footer bg-success bold sewa text-white">
+                                                            <i class="fas fa-shopping-cart"></i> Ready
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>

@@ -31,7 +31,7 @@
                             Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ Request::is('produk*') ? 'active' : '' }}" href="/kostum"><i
+                        <a class="nav-link {{ Request::is('kostum*') ? 'active' : '' }}" href="/kostum"><i
                                 class="fas fa-tshirt"></i>
                             Costum</a>
                     </li>

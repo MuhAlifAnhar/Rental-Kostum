@@ -30,7 +30,7 @@ Route::post('/logout', [UserController::class, 'logout']);
 
 Route::get('/dashboard', [UserController::class, 'index'])->middleware('guest');
 
-// Route::get('/kostum', [UserController::class, 'kostum'])->middleware('guest');
+Route::get('/kostum', [UserController::class, 'kostum'])->middleware('guest');
 
 Route::get('/kontak', [UserController::class, 'kontak'])->middleware('guest');
 

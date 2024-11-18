@@ -18,4 +18,9 @@ class Toko extends Model
     {
         return $this->belongsTo(User::class, 'id_admin'); // 'id_admin' adalah foreign key di tabel toko
     }
+
+    public function baju()
+    {
+        return $this->hasMany(Baju::class, 'id_toko');
+    }
 }

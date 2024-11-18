@@ -102,15 +102,15 @@
             <a href="/admin" class="nav-link text-white {{ Request::is('admin') ? 'active' : '' }}">
                 <i class="fas fa-tachometer-alt"></i> Dashboard
             </a>
-            <a href="/admin/toko" class="nav-link text-white {{ Request::is('admin/toko') ? 'active' : '' }}">
+            <a href="/admin/toko" class="nav-link text-white {{ Request::is('admin/toko*') ? 'active' : '' }}">
                 <i class="fas fa-store"></i> Toko
             </a>
-            <a href="/admin/request" class="nav-link text-white {{ Request::is('admin/request') ? 'active' : '' }}">
+            <a href="/admin/request" class="nav-link text-white {{ Request::is('admin/request*') ? 'active' : '' }}">
                 <i class="fas fa-inbox"></i> Request Toko
             </a>
         @endcan
         @can('isAdmin')
-            <a href="/admin/produk" class="nav-link text-white {{ Request::is('admin/produk') ? 'active' : '' }}">
+            <a href="/admin/produk" class="nav-link text-white {{ Request::is('admin/produk*') ? 'active' : '' }}">
                 <i class="fas fa-box"></i> Produk
             </a>
         @endcan

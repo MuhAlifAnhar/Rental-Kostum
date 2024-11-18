@@ -43,5 +43,17 @@ class DatabaseSeeder extends Seeder
             'nama_toko' => 'Turu Rent',
             'id_admin' => 2
         ]);
+
+        DB::table('keterangan')->insert([
+            'nama_keterangan' => 'Di sewa'
+        ]);
+
+        DB::table('keterangan')->insert([
+            'nama_keterangan' => 'Di booking'
+        ]);
+
+        DB::table('keterangan')->insert([
+            'nama_keterangan' => 'Ready'
+        ]);
     }
 }

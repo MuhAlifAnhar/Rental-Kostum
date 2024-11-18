@@ -27,6 +27,7 @@
                             {{ $message }}
                         </div>
                     @enderror
+                    <option value="">-- Pilih Akun Admin --</option>
                     @foreach ($admin as $akuna)
                         <option value="{{ $akuna->id }}">{{ $akuna->nama }}</option>
                     @endforeach

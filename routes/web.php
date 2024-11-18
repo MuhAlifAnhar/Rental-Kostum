@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BajuController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\TokoController;
 use App\Http\Controllers\UserController;

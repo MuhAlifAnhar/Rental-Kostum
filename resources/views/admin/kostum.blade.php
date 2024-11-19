@@ -41,7 +41,15 @@
                         <td><img src="{{ asset('storage/' . $nama->image) }}" alt="Image {{ $nama->nama }}"
                                 class="img-thumbnail" width="100"></td>
                         <td>{{ $nama->toko->nama_toko }}</td>
-                        <td>{{ $nama->keterangan->nama_keterangan }}</td>
+                        <td>
+                            @if ($nama->keterangan->nama_keterangan == 'Ready')
+                                <span class="badge bg-success">Ready</span>
+                            @elseif ($nama->keterangan->nama_keterangan == 'Di booking')
+                                <span class="badge bg-warning">Di Booking</span>
+                            @else
+                                <span class="badge bg-danger">Di Sewa</span>
+                            @endif
+                        </td>
                         <td class="d-flex">
                             <a href="{{ url('admin/produk/' . $nama->id . '/edit') }}"
                                 class="btn btn-sm btn-warning me-2 text-white">

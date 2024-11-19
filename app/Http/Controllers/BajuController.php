@@ -68,7 +68,9 @@ class BajuController extends Controller
             'nama_keterangan' => 'required|max:255',
         ]);
 
-        $imagePath = $request->file('image')->store('public/images');
+        // $imagePath = $request->file('image')->store('public/images');
+        $imagePath = $request->file('image')->store('images', 'public');
+
 
 
         Baju::create([

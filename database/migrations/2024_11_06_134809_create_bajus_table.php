@@ -16,7 +16,6 @@ class CreateBajusTable extends Migration
         Schema::create('kostum', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            // $table->string('deskripsi');
             $table->integer('harga');
             $table->string('image');
             $table->unsignedBigInteger('id_toko');

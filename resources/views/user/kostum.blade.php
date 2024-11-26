@@ -1,333 +1,131 @@
 @extends('layout.navbar')
 
 @section('title')
-    <title>Rental Kostum | Kostum</title>
+    <title>Rental Kostum | Kontak</title>
 @endsection
 
 @section('body')
-    <section id="event">
-        <div class="container-fluid event py-3 my-6">
-            <div class="container">
-                <div class="text-center wow bounceInUp">
-                    <h1 class="pt-5 mb-5">Silahkan Pilih Kostum Yang Anda Inginkan</h1>
-                </div>
-                <div class="tab-class text-center">
-                    <ul class="nav nav-pills d-inline-flex justify-content-center mb-5 wow bounceInUp">
-                        <li class="nav-item p-2">
-                            <a class="d-flex mx-2 py-2 border border-primary bg-light rounded-pill active text-decoration-none"
-                                data-bs-toggle="pill" href="#tab-1">
-                                <span class="text-dark" style="width: 150px;">Semua Toko</span>
-                            </a>
-                        </li>
-                        <li class="nav-item p-2">
-                            <a class="d-flex py-2 mx-2 border border-primary bg-light rounded-pill text-decoration-none"
-                                data-bs-toggle="pill" href="#tab-2">
-                                <span class="text-dark" style="width: 150px;">Turu Rental</span>
-                            </a>
-                        </li>
-                        <li class="nav-item p-2">
-                            <a class="d-flex mx-2 py-2 border border-primary bg-light rounded-pill text-decoration-none"
-                                data-bs-toggle="pill" href="#tab-3">
-                                <span class="text-dark" style="width: 150px;">Makassar Rental</span>
-                            </a>
-                        </li>
-                        <li class="nav-item p-2">
-                            <a class="d-flex mx-2 py-2 border border-primary bg-light rounded-pill text-decoration-none"
-                                data-bs-toggle="pill" href="#tab-4">
-                                <span class="text-dark" style="width: 150px;">Nurul Rental</span>
-                            </a>
-                        </li>
-                        <li class="nav-item p-2">
-                            <a class="d-flex mx-2 py-2 border border-primary bg-light rounded-pill text-decoration-none"
-                                data-bs-toggle="pill" href="#tab-5">
-                                <span class="text-dark" style="width: 150px;">Cosplay Rental</span>
-                            </a>
-                        </li>
-                    </ul>
-                    <div class="tab-content">
-                        <div id="tab-1" class="tab-pane fade show p-0 active">
-                            <div class="row g-4">
-                                <div class="col-lg-12">
-                                    <div class="row g-4">
-                                        <div class="col-sm-12 col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.1s">
-                                            <a href="" class="text-decoration-none">
-                                                <div class="card text-center" style="width: 18rem;">
-                                                    <img src="img/anime1.jpg" class="card-img-top" alt="Kostum">
-                                                    <div class="card-body m-0 p-0">
-                                                        <p class="card-text bold">kostum Raiden Shogun</p>
-                                                        <p class="card-text">Rp. 100.000
-                                                        </p>
-                                                        <p class="card-footer bg-success bold sewa text-white">
-                                                            <i class="fas fa-shopping-cart"></i> Ready
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-sm-12 col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.3s">
-                                            <a href="" class="text-decoration-none">
-                                                <div class="card text-center" style="width: 18rem;">
-                                                    <img src="img/anime1.jpg" class="card-img-top" alt="Kostum">
-                                                    <div class="card-body m-0 p-0">
-                                                        <p class="card-text bold">kostum Raiden Shogun</p>
-                                                        <p class="card-text">Rp. 100.000
-                                                        </p>
-                                                        <p class="card-footer bg-success bold sewa text-white">
-                                                            <i class="fas fa-shopping-cart"></i> Ready
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-sm-12 col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.5s">
-                                            <a href="" class="text-decoration-none">
-                                                <div class="card text-center" style="width: 18rem;">
-                                                    <img src="img/anime1.jpg" class="card-img-top" alt="Kostum">
-                                                    <div class="card-body m-0 p-0">
-                                                        <p class="card-text bold">kostum Raiden Shogun</p>
-                                                        <p class="card-text">Rp. 100.000
-                                                        </p>
-                                                        <p class="card-footer bg-success bold sewa text-white">
-                                                            <i class="fas fa-shopping-cart"></i> Ready
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-sm-12 col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.7s">
-                                            <a href="" class="text-decoration-none">
-                                                <div class="card text-center" style="width: 18rem;">
-                                                    <img src="img/anime1.jpg" class="card-img-top" alt="Kostum">
-                                                    <div class="card-body m-0 p-0">
-                                                        <p class="card-text bold">kostum Raiden Shogun</p>
-                                                        <p class="card-text">Rp. 100.000
-                                                        </p>
-                                                        <p class="card-footer bg-success bold sewa text-white">
-                                                            <i class="fas fa-shopping-cart"></i> Ready
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-sm-12 col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.1s">
-                                            <a href="" class="text-decoration-none">
-                                                <div class="card text-center" style="width: 18rem;">
-                                                    <img src="img/anime1.jpg" class="card-img-top" alt="Kostum">
-                                                    <div class="card-body m-0 p-0">
-                                                        <p class="card-text bold">kostum Raiden Shogun</p>
-                                                        <p class="card-text">Rp. 100.000
-                                                        </p>
-                                                        <p class="card-footer bg-success bold sewa text-white">
-                                                            <i class="fas fa-shopping-cart"></i> Ready
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-sm-12 col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.3s">
-                                            <a href="" class="text-decoration-none">
-                                                <div class="card text-center" style="width: 18rem;">
-                                                    <img src="img/anime1.jpg" class="card-img-top" alt="Kostum">
-                                                    <div class="card-body m-0 p-0">
-                                                        <p class="card-text bold">kostum Raiden Shogun</p>
-                                                        <p class="card-text">Rp. 100.000
-                                                        </p>
-                                                        <p class="card-footer bg-success bold sewa text-white">
-                                                            <i class="fas fa-shopping-cart"></i> Ready
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-sm-12 col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.5s">
-                                            <a href="" class="text-decoration-none">
-                                                <div class="card text-center" style="width: 18rem;">
-                                                    <img src="img/anime1.jpg" class="card-img-top" alt="Kostum">
-                                                    <div class="card-body m-0 p-0">
-                                                        <p class="card-text bold">kostum Raiden Shogun</p>
-                                                        <p class="card-text">Rp. 100.000
-                                                        </p>
-                                                        <p class="card-footer bg-success bold sewa text-white">
-                                                            <i class="fas fa-shopping-cart"></i> Ready
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-sm-12 col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.7s">
-                                            <a href="" class="text-decoration-none">
-                                                <div class="card text-center" style="width: 18rem;">
-                                                    <img src="img/anime1.jpg" class="card-img-top" alt="Kostum">
-                                                    <div class="card-body m-0 p-0">
-                                                        <p class="card-text bold">kostum Raiden Shogun</p>
-                                                        <p class="card-text">Rp. 100.000
-                                                        </p>
-                                                        <p class="card-footer bg-success bold sewa text-white">
-                                                            <i class="fas fa-shopping-cart"></i> Ready
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
+    <div class="container pt-5">
+        <h1>Daftar Toko dan kostum</h1>
+        <div class="row pb-5 pt-3">
+            @foreach ($tokos as $toko)
+                <div class="col-md-3 d-flex justify-content-center mb-4">
+                    <div class="card text-center" style="width: 18rem;">
+                        <a href="{{ route('kostum.byToko', ['tokoId' => $toko->id]) }}"
+                            class="text-decoration-none text-dark">
+                            <div class="card-body">
+                                <p class="card-text bold">{{ $toko->nama_toko }}</p>
                             </div>
-                        </div>
-                        <div id="tab-2" class="tab-pane fade show p-0">
-                            <div class="row g-4">
-                                <div class="col-lg-12">
-                                    <div class="row g-4">
-                                        <div class="col-sm-12 col-md-6 col-lg-3">
-                                            <a href="" class="text-decoration-none">
-                                                <div class="card text-center" style="width: 18rem;">
-                                                    <img src="img/anime1.jpg" class="card-img-top" alt="Kostum">
-                                                    <div class="card-body m-0 p-0">
-                                                        <p class="card-text bold">kostum Raiden Shogun</p>
-                                                        <p class="card-text">Rp. 100.000
-                                                        </p>
-                                                        <p class="card-footer bg-success bold sewa text-white">
-                                                            <i class="fas fa-shopping-cart"></i> Ready
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-sm-12 col-md-6 col-lg-3">
-                                            <a href="" class="text-decoration-none">
-                                                <div class="card text-center" style="width: 18rem;">
-                                                    <img src="img/anime1.jpg" class="card-img-top" alt="Kostum">
-                                                    <div class="card-body m-0 p-0">
-                                                        <p class="card-text bold">kostum Raiden Shogun</p>
-                                                        <p class="card-text">Rp. 100.000
-                                                        </p>
-                                                        <p class="card-footer bg-success bold sewa text-white">
-                                                            <i class="fas fa-shopping-cart"></i> Ready
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="tab-3" class="tab-pane fade show p-0">
-                            <div class="row g-4">
-                                <div class="col-lg-12">
-                                    <div class="row g-4">
-                                        <div class="col-sm-12 col-md-6 col-lg-3">
-                                            <a href="" class="text-decoration-none">
-                                                <div class="card text-center" style="width: 18rem;">
-                                                    <img src="img/anime1.jpg" class="card-img-top" alt="Kostum">
-                                                    <div class="card-body m-0 p-0">
-                                                        <p class="card-text bold">kostum Raiden Shogun</p>
-                                                        <p class="card-text">Rp. 100.000
-                                                        </p>
-                                                        <p class="card-footer bg-success bold sewa text-white">
-                                                            <i class="fas fa-shopping-cart"></i> Ready
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-sm-12 col-md-6 col-lg-3">
-                                            <a href="" class="text-decoration-none">
-                                                <div class="card text-center" style="width: 18rem;">
-                                                    <img src="img/anime1.jpg" class="card-img-top" alt="Kostum">
-                                                    <div class="card-body m-0 p-0">
-                                                        <p class="card-text bold">kostum Raiden Shogun</p>
-                                                        <p class="card-text">Rp. 100.000
-                                                        </p>
-                                                        <p class="card-footer bg-success bold sewa text-white">
-                                                            <i class="fas fa-shopping-cart"></i> Ready
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="tab-4" class="tab-pane fade show p-0">
-                            <div class="row g-4">
-                                <div class="col-lg-12">
-                                    <div class="row g-4">
-                                        <div class="col-sm-12 col-md-6 col-lg-3">
-                                            <a href="" class="text-decoration-none">
-                                                <div class="card text-center" style="width: 18rem;">
-                                                    <img src="img/anime1.jpg" class="card-img-top" alt="Kostum">
-                                                    <div class="card-body m-0 p-0">
-                                                        <p class="card-text bold">kostum Raiden Shogun</p>
-                                                        <p class="card-text">Rp. 100.000
-                                                        </p>
-                                                        <p class="card-footer bg-success bold sewa text-white">
-                                                            <i class="fas fa-shopping-cart"></i> Ready
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-sm-12 col-md-6 col-lg-3">
-                                            <a href="" class="text-decoration-none">
-                                                <div class="card text-center" style="width: 18rem;">
-                                                    <img src="img/anime1.jpg" class="card-img-top" alt="Kostum">
-                                                    <div class="card-body m-0 p-0">
-                                                        <p class="card-text bold">kostum Raiden Shogun</p>
-                                                        <p class="card-text">Rp. 100.000
-                                                        </p>
-                                                        <p class="card-footer bg-success bold sewa text-white">
-                                                            <i class="fas fa-shopping-cart"></i> Ready
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="tab-5" class="tab-pane fade show p-0">
-                            <div class="row g-4">
-                                <div class="col-lg-12">
-                                    <div class="row g-4">
-                                        <div class="col-sm-12 col-md-6 col-lg-3">
-                                            <a href="" class="text-decoration-none">
-                                                <div class="card text-center" style="width: 18rem;">
-                                                    <img src="img/anime1.jpg" class="card-img-top" alt="Kostum">
-                                                    <div class="card-body m-0 p-0">
-                                                        <p class="card-text bold">kostum Raiden Shogun</p>
-                                                        <p class="card-text">Rp. 100.000
-                                                        </p>
-                                                        <p class="card-footer bg-success bold sewa text-white">
-                                                            <i class="fas fa-shopping-cart"></i> Ready
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-sm-12 col-md-6 col-lg-3">
-                                            <a href="" class="text-decoration-none">
-                                                <div class="card text-center" style="width: 18rem;">
-                                                    <img src="img/anime1.jpg" class="card-img-top" alt="Kostum">
-                                                    <div class="card-body m-0 p-0">
-                                                        <p class="card-text bold">kostum Raiden Shogun</p>
-                                                        <p class="card-text">Rp. 100.000
-                                                        </p>
-                                                        <p class="card-footer bg-success bold sewa text-white">
-                                                            <i class="fas fa-shopping-cart"></i> Ready
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
-            </div>
+            @endforeach
         </div>
-    </section>
+        <div class="row pb-5">
+            @if ($baju->isEmpty())
+                <div class="col-md-12">
+                    <p class="text-center">Pilih toko untuk melihat kostum.</p>
+                </div>
+            @else
+                @foreach ($baju as $b)
+                    <div class="col-md-3 d-flex justify-content-center mb-4">
+                        <a href="https://wa.me/6282343454251?text=Halo,%20saya%20mau%20bertanya%20tentang%20kostum%20{{ urlencode($b->nama) }}"
+                            class="text-decoration-none text-dark">
+                            <div class="card text-center ad" style="width: 18rem;" data-baju-id="{{ $b->id }}">
+                                <img src="{{ asset('storage/' . $b->image) }}" class="card-img-top"
+                                    alt="{{ $b->nama }}">
+                                <div class="card-body m-0 p-0">
+                                    <p class="card-text bold">{{ $b->nama }}</p>
+                                    <p class="card-text bold">{{ $b->deskripsi }}</p>
+                                    <p class="card-text">Rp. {{ number_format($b->harga, 0, ',', '.') }}</p>
+                                    @if ($b->nama_keterangan == 1)
+                                        <p class="card-footer bg-danger bold sewa text-white"
+                                            data-status="{{ $b->keterangan->nama_keterangan }}">
+                                            {{ $b->keterangan->nama_keterangan }}
+                                        </p>
+                                    @elseif ($b->nama_keterangan == 2)
+                                        <p class="card-footer bg-warning bold sewa text-white"
+                                            data-status="{{ $b->keterangan->nama_keterangan }}">
+                                            {{ $b->keterangan->nama_keterangan }}
+                                        </p>
+                                    @elseif ($b->nama_keterangan == 3)
+                                        <p class="card-footer bg-success bold sewa text-white"
+                                            data-status="{{ $b->keterangan->nama_keterangan }}">
+                                            {{ $b->keterangan->nama_keterangan }}
+                                        </p>
+                                    @endif
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                @endforeach
+            @endif
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ambil semua elemen dengan class 'ad' (card)
+            const cardElems = document.querySelectorAll('.ad');
+
+            // Loop through semua elemen dan tambahkan event listener untuk setiap elemen
+            cardElems.forEach(card => {
+                card.addEventListener('click', function() {
+                    console.log('Card clicked'); // Debug: Check if card click is detected
+
+                    // Ambil element p dengan class 'sewa' di dalam card yang diklik
+                    let keteranganElem = this.querySelector('.sewa');
+
+                    // Ambil status keterangan dari atribut data-status
+                    let status = keteranganElem.getAttribute('data-status');
+                    console.log('Status:', status); // Debug: Check status
+
+                    // Cek apakah status saat ini adalah 'Ready'
+                    if (status === 'Ready') {
+                        // Kirim permintaan AJAX untuk menyimpan perubahan status
+                        let bajuId = this.getAttribute(
+                            'data-baju-id'); // Ambil ID baju dari dataset
+                        console.log('Baju ID:', bajuId); // Debug: Check baju ID
+
+                        fetch("{{ route('kostum.updateStatus') }}", {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                                },
+                                body: JSON.stringify({
+                                    baju_id: bajuId
+                                })
+                            })
+                            .then(response => {
+                                if (!response.ok) {
+                                    throw new Error('Network response was not ok');
+                                }
+                                return response.json();
+                            })
+                            .then(data => {
+                                console.log('Response:',
+                                    data); // Debug: Output response dari server
+                                if (data.status === 'success') {
+                                    // Ubah tampilan di client-side jika perlu
+                                    keteranganElem.textContent = 'Di booking';
+                                    keteranganElem.style.color =
+                                        'white'; // Warna kuning untuk Di booking
+                                    keteranganElem.setAttribute('data-status', 'Di booking');
+                                    // Optional: Nonaktifkan event listener setelah diklik sekali
+                                    card.removeEventListener('click', arguments.callee);
+                                } else {
+                                    console.error('Error:', data
+                                        .message); // Debug: Output error message
+                                }
+                            })
+                            .catch(error => {
+                                console.error('Fetch Error:',
+                                    error); // Debug: Output fetch error
+                            });
+                    }
+                });
+            });
+        });
+    </script>
 @endsection

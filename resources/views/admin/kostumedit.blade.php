@@ -6,12 +6,13 @@
 
 @section('body')
     <div class="col-lg-8 mt-4">
-        <form method="post" action="/admin/produk" enctype="multipart/form-data">
+        <form method="post" action="{{ url('admin/produk/' . $baju->id) }}" enctype="multipart/form-data">
+            @method('put')
             @csrf
             <div class="form-group mb-3">
                 <label for="nama_produk">Nama Produk</label>
                 <input type="text" name="nama_produk" class="form-control @error('nama_produk') is-invalid @enderror"
-                    id="nama_produk" required autofocus value="{{ old('nama_produk') }}">
+                    id="nama_produk" required autofocus value="{{ old('nama_produk', $baju->nama) }}">
                 @error('nama_produk')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -21,7 +22,7 @@
             <div class="form-group mb-3">
                 <label for="harga">Harga</label>
                 <input type="number" name="harga" class="form-control @error('harga') is-invalid @enderror"
-                    id="harga" required value="{{ old('harga') }}">
+                    id="harga" required value="{{ old('harga', $baju->harga) }}">
                 @error('harga')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -30,7 +31,12 @@
             </div>
             <div class="mb-3">
                 <label for="image" class="form-label">Masukkan foto produk</label>
-                <img class="img-preview img-fluid mb-3">
+                <input type="hidden" name="oldImage" value="{{ $baju->image }}">
+                @if ($baju->image)
+                    <img src="{{ asset('storage/' . $baju->image) }}" class="img-preview img-fluid mb-3 d-block">
+                @else
+                    <img class="img-preview img-fluid mb-3">
+                @endif
                 <input class="form-control @error('image') is-invalid @enderror" type="file" id="image"
                     name="image" onchange="previewImage()">
                 @error('image')
@@ -42,37 +48,37 @@
             <div class="form-group mb-3">
                 <label for="nama_toko">Nama Toko</label>
                 <select name="nama_toko" class="form-control @error('nama_toko') is-invalid @enderror" id="nama_toko"
-                    required value="{{ old('nama_toko') }}">
-                    @error('nama_toko')
-                        <div class="invalid-feedback">
-                            {{ $message }}
-                        </div>
-                    @enderror
-                    <option value="">-- Pilih Toko --</option>
+                    required>
                     @foreach ($toko as $tokoo)
-                        <option value="{{ $tokoo->id }}">{{ $tokoo->nama_toko }}</option>
+                        <option value="{{ $tokoo->id }}" {{ $baju->id_toko == $tokoo->id ? 'selected' : '' }}>
+                            {{ $tokoo->nama_toko }}</option>
                     @endforeach
                 </select>
+                @error('nama_toko')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
             <div class="form-group mb-3">
                 <label for="nama_keterangan">Keterangan Baju</label>
                 <select name="nama_keterangan" class="form-control @error('nama_keterangan') is-invalid @enderror"
-                    id="nama_keterangan" required value="{{ old('nama_keterangan') }}">
-                    @error('nama_keterangan')
-                        <div class="invalid-feedback">
-                            {{ $message }}
-                        </div>
-                    @enderror
-                    <option value="">-- Pilih keterangan --</option>
+                    id="nama_keterangan" required>
                     @foreach ($kete as $keterangan)
-                        <option value="{{ $keterangan->id }}">{{ $keterangan->nama_keterangan }}</option>
+                        <option value="{{ $keterangan->id }}"
+                            {{ $baju->nama_keterangan == $keterangan->id ? 'selected' : '' }}>
+                            {{ $keterangan->nama_keterangan }}</option>
                     @endforeach
                 </select>
+                @error('nama_keterangan')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
-            <button type="submit" class="btn btn-primary">Buat Produk</button>
+            <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
         </form>
     </div>
-
     <script>
         function previewImage() {
             const image = document.querySelector('#image');

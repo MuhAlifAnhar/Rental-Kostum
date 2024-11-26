@@ -6,6 +6,7 @@ use App\Models\Toko;
 use App\Models\Keterangan;
 use App\Models\Baju;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class BajuController extends Controller
 {
@@ -103,9 +104,22 @@ class BajuController extends Controller
      * @param  \App\Models\Baju  $baju
      * @return \Illuminate\Http\Response
      */
-    public function edit(Baju $baju)
+    public function edit($id)
     {
-        //
+        $this->authorize('isAdmin');
+
+        $baju = Baju::findOrFail($id);
+
+        $toko = Toko::where('id_admin', auth()->user()->id)->get();
+        // $toko = Toko::all();
+
+        $keterangan = Keterangan::all();
+
+        return view('admin.kostumedit', [
+            'baju' => $baju,
+            'toko' => $toko,
+            'kete' => $keterangan
+        ]);
     }
 
     /**
@@ -115,9 +129,39 @@ class BajuController extends Controller
      * @param  \App\Models\Baju  $baju
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Baju $baju)
+    public function update(Request $request, Baju $baju, $id)
     {
-        //
+        // dd($request);
+        $this->authorize('isAdmin');
+
+        $request->validate([
+            'nama_produk' => 'required|max:255',
+            'harga' => 'required|integer|min:0',
+            'image' => 'image|file',
+            'nama_toko'=> 'required|exists:toko,id',
+            'nama_keterangan'=> 'required|exists:keterangan,id'
+        ]);
+
+        if ($request->hasFile('image')) {
+            if ($baju->image) {
+                Storage::delete($baju->image);
+            }
+            $imagePath = $request->file('image')->store('images', 'public');
+        } else {
+            $imagePath = $baju->image;
+        }
+
+        $baju = Baju::findOrFail($id)->update([
+            'nama' => $request->nama_produk,
+            'harga' => $request->harga,
+            'image' => $imagePath,
+            'id_toko' => $request->nama_toko,
+            'nama_keterangan' => $request->nama_keterangan,
+            'id_admin' => auth()->user()->id
+        ]);
+
+        // Redirect ke halaman produk dengan pesan sukses
+        return redirect('/admin/produk')->with('sukses', 'Produk telah diperbarui!');
     }
 
     /**
@@ -126,8 +170,13 @@ class BajuController extends Controller
      * @param  \App\Models\Baju  $baju
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Baju $baju)
+    public function destroy(Baju $baju, $id)
     {
-        //
+        if ($baju->image) {
+            Storage::delete($baju->image);
+        }
+        $baju::where('id', $id) ->delete();
+
+        return redirect('/admin/produk')->with('sukses', 'Produk telah dihapus!');
     }
 }

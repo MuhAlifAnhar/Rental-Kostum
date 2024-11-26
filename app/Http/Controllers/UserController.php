@@ -3,8 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Toko;
+use Illuminate\Support\Facades\Gate;
+use App\Models\Keterangan;
+use App\Models\Baju;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 use App\Models\User;
 
 class UserController extends Controller
@@ -13,8 +18,59 @@ class UserController extends Controller
         return view("user.index");
     }
 
-    function kostum(){
-        return view("user.kostum");
+    function kostum(Request $request, $tokoId = null){
+        $tokos = Toko::all();
+
+        $keterangan = Keterangan::all();
+
+        $baju = $tokoId ? Baju::where('id_toko', $tokoId)->get() : collect();
+
+        return view("user.kostum", [
+            'tokos' => $tokos,
+            'keterangan' => $keterangan,
+            'baju' => $baju,
+            'selectedTokoId' => $tokoId
+        ]);
+    }
+
+    public function updateStatus(Request $request)
+    {
+        Log::info('Update Status Request:', $request->all());
+
+        try {
+            // Validasi request jika perlu
+            $request->validate([
+                'baju_id' => 'required|integer|exists:baju,id',
+            ]);
+
+            // Debug: Check if baju_id is valid
+            Log::info('Baju ID:', ['baju_id' => $request->baju_id]);
+
+            // Temukan baju berdasarkan ID
+            $baju = Baju::find($request->baju_id);
+
+            // Debug: Check if baju is found
+            if ($baju) {
+                Log::info('Baju Found:', ['baju' => $baju]);
+
+                // Update status baju
+                if ($baju->nama_keterangan === 3) {
+                    $baju->update(['nama_keterangan' => 2]);
+
+                    Log::info('Status updated to "Di booking" for Baju ID:', ['baju_id' => $baju->id]);
+                    return response()->json(['status' => 'success', 'message' => 'Status updated successfully']);
+                } else {
+                    Log::warning('Invalid status for Baju ID:', ['baju_id' => $baju->id]);
+                }
+            } else {
+                Log::error('Baju not found for Baju ID:', ['baju_id' => $request->baju_id]);
+            }
+        } catch (\Exception $e) {
+            // Debug: Log exception
+            Log::error('Exception:', ['message' => $e->getMessage(), 'trace' => $e->getTraceAsString()]);
+            return response()->json(['status' => 'error', 'message' => 'Server error'], 500);
+        }
+        return response()->json(['status' => 'error', 'message' => 'Invalid status update'], 400);
     }
 
     function kontak(){

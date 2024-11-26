@@ -32,6 +32,9 @@ Route::post('/logout', [UserController::class, 'logout']);
 Route::get('/dashboard', [UserController::class, 'index'])->middleware('guest');
 
 Route::get('/kostum', [UserController::class, 'kostum'])->middleware('guest');
+Route::get('/kostum/{tokoId}', [UserController::class, 'kostum'])->name('kostum.byToko')->middleware('guest');
+Route::post('/kostum', [UserController::class, 'kostum'])->middleware('guest');
+Route::post('/kostum/update-status', [UserController::class, 'updateStatus'])->name('kostum.updateStatus');
 
 Route::get('/kontak', [UserController::class, 'kontak'])->middleware('guest');
 

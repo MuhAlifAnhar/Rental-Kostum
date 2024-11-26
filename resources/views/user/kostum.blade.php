@@ -1,25 +1,30 @@
 @extends('layout.navbar')
 
 @section('title')
-    <title>Rental Kostum | Kontak</title>
+    <title>Rental Kostum | Kostum</title>
 @endsection
 
 @section('body')
     <div class="container pt-5">
-        <h1>Daftar Toko dan kostum</h1>
-        <div class="row pb-5 pt-3">
-            @foreach ($tokos as $toko)
-                <div class="col-md-3 d-flex justify-content-center mb-4">
-                    <div class="card text-center" style="width: 18rem;">
+        <div class="text-center">
+            <h3 class="pt-5 mb-5">Silahkan Pilih Kostum Yang Anda Inginkan</h3>
+        </div>
+        @if (Session::has('succes'))
+            <div class="alert alert-success my-3 alert-fixed" role="alert">
+                <i class="fas fa-check-circle"></i> {{ Session::get('sukses') }}
+            </div>
+        @endif
+        <div class="row pb-5 pt-3 text-center">
+            <ul class="nav nav-pills d-inline-flex justify-content-center mb-5">
+                @foreach ($tokos as $toko)
+                    <li class="nav-item p-2">
                         <a href="{{ route('kostum.byToko', ['tokoId' => $toko->id]) }}"
-                            class="text-decoration-none text-dark">
-                            <div class="card-body">
-                                <p class="card-text bold">{{ $toko->nama_toko }}</p>
-                            </div>
+                            class="d-flex mx-2 py-2 border border-primary bg-light rounded-pill active text-decoration-none text-dark">
+                            <span class="text-dark" style="width: 150px;">{{ $toko->nama_toko }}</span>
                         </a>
-                    </div>
-                </div>
-            @endforeach
+                    </li>
+                @endforeach
+            </ul>
         </div>
         <div class="row pb-5">
             @if ($baju->isEmpty())
@@ -29,8 +34,8 @@
             @else
                 @foreach ($baju as $b)
                     <div class="col-md-3 d-flex justify-content-center mb-4">
-                        <a href="https://wa.me/6282343454251?text=Halo,%20saya%20mau%20bertanya%20tentang%20kostum%20{{ urlencode($b->nama) }}"
-                            class="text-decoration-none text-dark">
+                        <a href="#" class="text-decoration-none text-dark" data-bs-toggle="modal"
+                            data-bs-target="#modalBook">
                             <div class="card text-center ad" style="width: 18rem;" data-baju-id="{{ $b->id }}">
                                 <img src="{{ asset('storage/' . $b->image) }}" class="card-img-top"
                                     alt="{{ $b->nama }}">
@@ -62,6 +67,8 @@
             @endif
         </div>
     </div>
+
+    @include('user._modal-book')
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {

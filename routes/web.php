@@ -7,6 +7,7 @@ use App\Http\Controllers\TokoController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SuperController;
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\RequestController;
 
 /*
@@ -35,6 +36,8 @@ Route::get('/kostum', [UserController::class, 'kostum'])->middleware('guest');
 Route::get('/kostum/{tokoId}', [UserController::class, 'kostum'])->name('kostum.byToko')->middleware('guest');
 Route::post('/kostum', [UserController::class, 'kostum'])->middleware('guest');
 Route::post('/kostum/update-status', [UserController::class, 'updateStatus'])->name('kostum.updateStatus');
+
+Route::post('booking', [BookingController::class, 'store']);
 
 Route::get('/kontak', [UserController::class, 'kontak'])->middleware('guest');
 

@@ -9,7 +9,7 @@
         <div class="text-center">
             <h3 class="pt-5 mb-5">Silahkan Pilih Kostum Yang Anda Inginkan</h3>
         </div>
-        @if (Session::has('succes'))
+        @if (Session::has('sukses'))
             <div class="alert alert-success my-3 alert-fixed" role="alert">
                 <i class="fas fa-check-circle"></i> {{ Session::get('sukses') }}
             </div>

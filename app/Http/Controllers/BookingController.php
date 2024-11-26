@@ -33,6 +33,6 @@ class BookingController extends Controller
             'message' => $request->message,
         ]);
 
-        return redirect()->back()->with('success', 'Booking berhasil!');
+        return redirect()->back()->with('sukses', 'Booking berhasil!');
     }
 }

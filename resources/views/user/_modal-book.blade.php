@@ -67,6 +67,27 @@
                                 </span>
                             @enderror
                         </div>
+
+                        <div class="col-lg-4 col-md-6">
+                            <select name="baju" class="form-control @error('baju') is-invalid @enderror"
+                                id="baju" required value="{{ old('baju') }}">
+                                @error('baju')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                                <option value="">-- Pilih Baju --</option>
+                                @foreach ($baju as $bajua)
+                                    <option value="{{ $bajua->id }}">{{ $bajua->nama }}</option>
+                                @endforeach
+                            </select>
+
+                            @error('time')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
                     </div>
 
                     <div class="form-group mt-3">

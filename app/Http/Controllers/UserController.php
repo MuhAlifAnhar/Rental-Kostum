@@ -25,11 +25,14 @@ class UserController extends Controller
 
         $baju = $tokoId ? Baju::where('id_toko', $tokoId)->get() : collect();
 
+        $idAdmin = $tokoId ? Toko::where('id', $tokoId)->value('id_admin') : null;
+
         return view("user.kostum", [
             'tokos' => $tokos,
             'keterangan' => $keterangan,
             'baju' => $baju,
-            'selectedTokoId' => $tokoId
+            'selectedTokoId' => $tokoId,
+            'admin' => $idAdmin
         ]);
     }
 

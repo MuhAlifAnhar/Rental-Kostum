@@ -111,7 +111,10 @@
         @endcan
         @can('isAdmin')
             <a href="/admin/produk" class="nav-link text-white {{ Request::is('admin/produk*') ? 'active' : '' }}">
-                <i class="fas fa-box"></i> Produk
+                <i class="fas fa-box-open"></i> Produk
+            </a>
+            <a href="/admin/transaksi" class="nav-link text-white {{ Request::is('admin/transaksi*') ? 'active' : '' }}">
+                <i class="fas fa-receipt"></i> Transaksi
             </a>
         @endcan
     </div>

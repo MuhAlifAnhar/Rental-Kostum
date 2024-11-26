@@ -8,7 +8,6 @@ use App\Models\Transaksi;
 class BookingController extends Controller
 {
     public function store(Request $request){
-        dd($request);
         $request->validate([
             'name' => 'required|max:255',
             'email' => 'required|email:dns',
@@ -16,10 +15,11 @@ class BookingController extends Controller
             'date' => 'required',
             'time' => 'required',
             'file' => 'required|file|image|mimes:jpeg,png,jpg',
+            'baju' => 'required',
             'message' => 'required|max:255',
         ]);
 
-        $imagePath = $request->file('image')->store('images', 'public');
+        $imagePath = $request->file('file')->store('images', 'public');
 
         Transaksi::create([
             'name' => $request->name,
@@ -28,6 +28,8 @@ class BookingController extends Controller
             'date' => $request->date,
             'time' => $request->time,
             'file' => $imagePath,
+            'id_toko' => $request->baju,
+            'status' => 'pending',
             'message' => $request->message,
         ]);
 

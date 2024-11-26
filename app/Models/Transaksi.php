@@ -13,4 +13,9 @@ class Transaksi extends Model
     protected $guarded = [
         'id'
     ];
+
+    public function toko()
+    {
+        return $this->belongsTo(Toko::class, 'id_toko', 'id');
+    }
 }

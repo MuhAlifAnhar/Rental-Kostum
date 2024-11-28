@@ -17,8 +17,9 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Nama</th>
+                    <th>Nama Pembeli</th>
                     <th>Email</th>
+                    {{-- <th>Nama Kostum</th> --}}
                     <th>Status</th>
                     <th>File</th>
                     <th>Aksi</th>
@@ -30,6 +31,7 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $nama->name }}</td>
                         <td>{{ $nama->email }}</td>
+                        {{-- <td>{{ $nama->kostum->nama }}</td> --}}
                         <td>
                             @if ($nama->status == 'success')
                                 <span class="badge bg-success">Sukses</span>
@@ -50,7 +52,7 @@
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-sm btn-danger"
-                                    onclick="return confirm('Kamu yakin mau hapus toko?')">
+                                    onclick="return confirm('Kamu yakin mau hapus transaksi?')">
                                     <i class="fas fa-trash-alt"></i> Hapus
                                 </button>
                             </form>

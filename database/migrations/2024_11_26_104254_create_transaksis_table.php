@@ -22,7 +22,7 @@ class CreateTransaksisTable extends Migration
             $table->time('time');
             $table->string('file');
             $table->unsignedBigInteger('id_toko');
-            $table->foreign('id_toko')->references('id')->on('toko');
+            $table->foreign('id_toko')->references('id')->on('kostum');
             $table->enum('status', ['pending', 'success', 'failed'])->default('pending');
             $table->text('message')->nullable();
             $table->timestamps();

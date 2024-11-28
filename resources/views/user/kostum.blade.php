@@ -14,6 +14,11 @@
                 <i class="fas fa-check-circle"></i> {{ Session::get('sukses') }}
             </div>
         @endif
+        @if ($errors->has('baju'))
+            <div class="alert alert-danger my-3 alert-fixed" role="alert">
+                {{ $errors->first('baju') }}
+            </div>
+        @endif
         <div class="row pb-5 pt-3 text-center">
             <ul class="nav nav-pills d-inline-flex justify-content-center mb-5">
                 @foreach ($tokos as $toko)

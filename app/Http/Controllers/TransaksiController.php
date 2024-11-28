@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Transaksi;
+use App\Models\Baju;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class TransaksiController extends Controller
@@ -20,11 +22,11 @@ class TransaksiController extends Controller
     {
         $this->authorize('isAdmin');
 
-        $user = auth()->user();
+         $idToko = Auth::user()->toko->id; // Pastikan kolom id_toko ada pada tabel users atau sesuai struktur Anda
 
-        $transaksi = Transaksi::whereHas('toko', function ($query) use ($user) {
-            $query->where('id_admin', $user->id);
-        })->latest()->get();
+        $transaksi = Transaksi::whereHas('kostum', function ($query) use ($idToko) {
+            $query->where('id_toko', $idToko);
+        })->with(['kostum.toko'])->get();
 
         return view('admin.transaksi', [
             'transaksi' => $transaksi
@@ -108,8 +110,17 @@ class TransaksiController extends Controller
      * @param  \App\Models\Transaksi  $transaksi
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Transaksi $transaksi)
+    public function destroy($id)
     {
-        //
+         $this->authorize('isAdmin');
+
+    // Cari transaksi berdasarkan ID
+    $transaksi = Transaksi::findOrFail($id);
+
+    // Hapus transaksi
+    $transaksi->delete();
+
+    // Redirect dengan pesan sukses
+    return redirect('/admin/transaksi')->with('sukses', 'Transaksi berhasil dihapus!');
     }
 }

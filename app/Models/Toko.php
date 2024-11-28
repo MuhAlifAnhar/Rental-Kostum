@@ -23,9 +23,4 @@ class Toko extends Model
     {
         return $this->hasMany(Baju::class, 'id_toko');
     }
-
-    public function transaksi()
-    {
-        return $this->hasMany(Transaksi::class, 'id_toko', 'id');
-    }
 }

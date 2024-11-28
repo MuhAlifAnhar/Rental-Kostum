@@ -23,4 +23,9 @@ class Baju extends Model
     {
         return $this->belongsTo(Keterangan::class, 'nama_keterangan');
     }
+
+    public function transaksi()
+    {
+        return $this->hasMany(Transaksi::class, 'id_toko');
+    }
 }

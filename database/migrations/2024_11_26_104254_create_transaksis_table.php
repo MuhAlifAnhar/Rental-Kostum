@@ -19,12 +19,12 @@ class CreateTransaksisTable extends Migration
             $table->string('email');
             $table->string('phone');
             $table->date('date');
-            $table->time('time');
             $table->string('file');
             $table->unsignedBigInteger('id_toko');
             $table->foreign('id_toko')->references('id')->on('kostum');
             $table->enum('status', ['pending', 'success', 'failed'])->default('pending');
             $table->text('message')->nullable();
+            $table->date('tanggal_pengembalian');
             $table->timestamps();
         });
     }

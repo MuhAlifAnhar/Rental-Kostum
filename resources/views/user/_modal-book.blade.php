@@ -58,10 +58,10 @@
                         </div>
 
                         <div class="col-lg-4 col-md-6">
-                            <input type="time" class="form-control @error('time') is-invalid @enderror"
-                                name="time" id="time" placeholder="Waktu Pesan" value="{{ old('time') }}">
-
-                            @error('time')
+                            <input type="date" class="form-control @error('datee') is-invalid @enderror"
+                                name="datee" id="datee" placeholder="Tanggal Pengembalian"
+                                value="{{ old('datee') }}">
+                            @error('datee')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>

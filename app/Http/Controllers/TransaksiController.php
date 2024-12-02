@@ -22,7 +22,7 @@ class TransaksiController extends Controller
     {
         $this->authorize('isAdmin');
 
-         $idToko = Auth::user()->toko->id; // Pastikan kolom id_toko ada pada tabel users atau sesuai struktur Anda
+        $idToko = Auth::user()->toko->id; // Pastikan kolom id_toko ada pada tabel users atau sesuai struktur Anda
 
         $transaksi = Transaksi::whereHas('kostum', function ($query) use ($idToko) {
             $query->where('id_toko', $idToko);

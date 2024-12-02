@@ -39,6 +39,25 @@
                         </div>
                     </a>
                 </div>
+                <div class="container mt-4">
+                    <h3>Ringkasan Transaksi Per Toko</h3>
+                    <div class="row">
+                        @foreach ($data as $store)
+                            <div class="col-md-4">
+                                <div class="card text-white bg-warning mb-3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <i class="fas fa-store"></i> {{ $store->nama_toko }}
+                                        </h5>
+                                        <p class="card-text">
+                                            Total Transaksi: {{ $store->total_transactions }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
             @endcan
             @can('isAdmin')
                 <div class="col-md-4">
@@ -53,8 +72,78 @@
                         </div>
                     </a>
                 </div>
+                <div class="container mt-4">
+                    <h3>Transaksi Anda</h3>
+                    <div class="row">
+                        <!-- Card Success -->
+                        <div class="col-md-4">
+                            <div class="card text-white bg-success mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <i class="fas fa-check-circle"></i> Transaksi Sukses
+                                    </h5>
+                                    <p class="card-text">
+                                        {{ $data['success'] }} transaksi
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card Pending -->
+                        <div class="col-md-4">
+                            <div class="card text-white bg-warning mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <i class="fas fa-hourglass-half"></i> Transaksi Pending
+                                    </h5>
+                                    <p class="card-text">
+                                        {{ $data['pending'] }} transaksi
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card Failed -->
+                        <div class="col-md-4">
+                            <div class="card text-white bg-danger mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <i class="fas fa-times-circle"></i> Transaksi Gagal
+                                    </h5>
+                                    <p class="card-text">
+                                        {{ $data['failed'] }} transaksi
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             @endcan
         </div>
-
     </div>
+
+    {{-- <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const ctx = document.getElementById('transactionChart').getContext('2d');
+            const transactionChart = new Chart(ctx, {
+                type: 'doughnut', // Pilih jenis chart (doughnut, bar, line, dll)
+                data: {
+                    labels: ['Success', 'Pending', 'Failed'],
+                    datasets: [{
+                        label: 'Transaksi',
+                        data: [{{ $data['success'] }}, {{ $data['pending'] }},
+                            {{ $data['failed'] }}],
+                        backgroundColor: ['#4CAF50', '#FFC107', '#F44336'], // Warna chart
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                    }
+                }
+            });
+        });
+    </script> --}}
 @endsection

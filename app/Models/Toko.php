@@ -23,4 +23,16 @@ class Toko extends Model
     {
         return $this->hasMany(Baju::class, 'id_toko');
     }
+
+    public function transaksis()
+    {
+        return $this->hasManyThrough(
+            Transaksi::class,  // Model tujuan akhir
+            Baju::class,       // Model perantara
+            'id_toko',         // Foreign key pada tabel `bajus` (menuju `tokos`)
+            'id_toko',         // Foreign key pada tabel `transaksis` (menuju `bajus`)
+            'id',              // Local key pada tabel `tokos`
+            'id'               // Local key pada tabel `bajus`
+        );
+    }
 }

@@ -98,10 +98,10 @@
             <i class="fas fa-times"></i>
         </span>
         <h3 class="text-center">Admin Panel</h3>
+        <a href="/admin" class="nav-link text-white {{ Request::is('admin') ? 'active' : '' }}">
+            <i class="fas fa-tachometer-alt"></i> Dashboard
+        </a>
         @can('isSuper')
-            <a href="/admin" class="nav-link text-white {{ Request::is('admin') ? 'active' : '' }}">
-                <i class="fas fa-tachometer-alt"></i> Dashboard
-            </a>
             <a href="/admin/toko" class="nav-link text-white {{ Request::is('admin/toko*') ? 'active' : '' }}">
                 <i class="fas fa-store"></i> Toko
             </a>
@@ -200,6 +200,8 @@
             $('#myTable').DataTable();
         });
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 
 </html>

@@ -22,7 +22,7 @@ class Transaksi extends Model
     // Model Transaksi
     protected static function booted()
     {
-        static::updated(function ($transaksi) {
+        static::created(function ($transaksi) {
             // Ambil kostum yang terkait dengan transaksi ini
             $kostum = $transaksi->kostum;
 

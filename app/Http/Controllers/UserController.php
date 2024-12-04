@@ -23,7 +23,12 @@ class UserController extends Controller
 
         $keterangan = Keterangan::all();
 
-        $baju = $tokoId ? Baju::where('id_toko', $tokoId)->get() : collect();
+        // $baju = $tokoId ? Baju::where('id_toko', $tokoId)->get() : collect();
+
+        $baju = $tokoId ? Baju::where('id_toko', $tokoId)
+        ->with(['transaksi' => function ($query) {
+            $query->where('status', '!=', 'failed');
+        }])->get() : collect();
 
         $idAdmin = $tokoId ? Toko::where('id', $tokoId)->value('id_admin') : null;
 

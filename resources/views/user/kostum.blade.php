@@ -48,6 +48,23 @@
                                     <p class="card-text bold">{{ $b->nama }}</p>
                                     <p class="card-text bold">{{ $b->deskripsi }}</p>
                                     <p class="card-text">Rp. {{ number_format($b->harga, 0, ',', '.') }}</p>
+                                    <p class="card-text">
+                                        @php
+                                            $latestTransaksi = $b->transaksi
+                                                ->where('status', '!=', 'failed')
+                                                ->sortByDesc('created_at');
+                                        @endphp
+                                        @if ($latestTransaksi)
+                                            @foreach ($latestTransaksi as $transaksi)
+                                                <p>
+                                                    Pesan dari: <strong>{{ $transaksi->date }}</strong>
+                                                    sampai <strong>{{ $transaksi->tanggal_pengembalian }}</strong>
+                                                </p>
+                                            @endforeach
+                                        @else
+                                            <em>Belum ada informasi tanggal pemesanan</em>
+                                        @endif
+                                    </p>
                                     @if ($b->nama_keterangan == 1)
                                         <p class="card-footer bg-danger bold sewa text-white"
                                             data-status="{{ $b->keterangan->nama_keterangan }}">

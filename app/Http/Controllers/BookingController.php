@@ -36,10 +36,21 @@ class BookingController extends Controller
             })
             ->first();
 
+        // if ($existingTransaksi) {
+        //     // Jika ada transaksi sebelumnya, cek tanggal pengembalian
+        //     if ($request->datee <= $existingTransaksi->tanggal_pengembalian) {
+        //         return back()->withErrors(['baju' => 'Kostum ini tidak tersedia untuk sewa karena masih dipakai atau dibooking hingga tanggal pengembalian sebelumnya.']);
+        //     }
+        // }
+
         if ($existingTransaksi) {
-            // Jika ada transaksi sebelumnya, cek tanggal pengembalian
-            if ($request->datee <= $existingTransaksi->tanggal_pengembalian) {
-                return back()->withErrors(['baju' => 'Kostum ini tidak tersedia untuk sewa karena masih dipakai atau dibooking hingga tanggal pengembalian sebelumnya.']);
+        // Jika ada transaksi sebelumnya, cek apakah rentang tanggal bertabrakan
+            if (
+                ($request->date >= $existingTransaksi->date && $request->date <= $existingTransaksi->tanggal_pengembalian) || // Tanggal sewa baru berada di dalam rentang transaksi sebelumnya
+                ($request->datee >= $existingTransaksi->date && $request->datee <= $existingTransaksi->tanggal_pengembalian) || // Tanggal pengembalian baru berada di dalam rentang transaksi sebelumnya
+                ($request->date <= $existingTransaksi->date && $request->datee >= $existingTransaksi->tanggal_pengembalian) // Rentang baru mencakup seluruh rentang transaksi sebelumnya
+            ) {
+                return back()->withErrors(['baju' => 'Kostum ini tidak tersedia untuk sewa pada rentang tanggal yang dipilih karena bertabrakan dengan pemesanan sebelumnya.']);
             }
         }
 

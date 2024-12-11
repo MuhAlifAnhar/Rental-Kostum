@@ -53,7 +53,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('keterangan')->insert([
-            'nama_keterangan' => 'Ready'
+            'nama_keterangan' => 'Pesan'
         ]);
     }
 }

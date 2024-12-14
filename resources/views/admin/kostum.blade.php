@@ -42,7 +42,7 @@
                                 class="img-thumbnail" width="100"></td>
                         <td>{{ $nama->toko->nama_toko }}</td>
                         <td>
-                            @if ($nama->keterangan->nama_keterangan == 'Ready')
+                            @if ($nama->keterangan->nama_keterangan == 'Pesan')
                                 <span class="badge bg-success">Ready</span>
                             @elseif ($nama->keterangan->nama_keterangan == 'Di booking')
                                 <span class="badge bg-warning">Di Booking</span>

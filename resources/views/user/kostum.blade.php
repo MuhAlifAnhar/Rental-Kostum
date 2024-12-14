@@ -50,19 +50,23 @@
                                     <p class="card-text">Rp. {{ number_format($b->harga, 0, ',', '.') }}</p>
                                     <div class="calendar mt-3 mb-3">
                                         <div class="d-flex flex-wrap justify-content-center">
-                                            @foreach ($baju as $b)
-                                                @foreach ($b->bookedDates as $date)
-                                                    @php
-                                                        $isBooked = in_array($date, $bookedDates); // Cek apakah tanggal ini sudah dipesan
-                                                    @endphp
+                                            @php
+                                                $bookedDates = $b->transaksi
+                                                    ->where('status', '!=', 'failed')
+                                                    ->pluck('date')
+                                                    ->toArray();
+                                            @endphp
 
-                                                    <div
-                                                        class="date-box {{ $isBooked ? 'bg-danger' : 'bg-success' }} text-white m-1">
-                                                        {{ \Carbon\Carbon::parse($date)->format('d') }}
-                                                        <!-- Tampilkan tanggal -->
-                                                    </div>
-                                                @endforeach
-                                            @endforeach
+                                            @for ($day = 1; $day <= 30; $day++)
+                                                @php
+                                                    $date = date('Y-m-') . str_pad($day, 2, '0', STR_PAD_LEFT);
+                                                    $isBooked = in_array($date, $bookedDates);
+                                                @endphp
+                                                <div
+                                                    class="date-box {{ $isBooked ? 'bg-danger' : 'bg-success' }} text-white m-1">
+                                                    {{ $day }}
+                                                </div>
+                                            @endfor
                                         </div>
                                     </div>
                                     @if ($b->nama_keterangan == 1)

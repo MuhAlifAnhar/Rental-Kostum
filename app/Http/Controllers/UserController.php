@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use App\Models\User;
+use Carbon\Carbon;
 
 class UserController extends Controller
 {
@@ -30,10 +31,26 @@ class UserController extends Controller
             $query->where('status', '!=', 'failed');
         }])->get() : collect();
 
+        foreach ($baju as $b) {
+            $bookedDates = [];
+            foreach ($b->transaksi as $transaksi) {
+                $startDate = Carbon::parse($transaksi->date);
+                $endDate = Carbon::parse($transaksi->tanggal_pengembalian);
+
+                // Menghasilkan array tanggal dari tanggal sewa hingga tanggal kembali
+                $datesInRange = $startDate->daysUntil($endDate)->toArray();
+                $bookedDates = array_merge($bookedDates, $datesInRange);
+            }
+
+            // Menyimpan daftar tanggal yang sudah dipesan dalam properti tambahan
+            $b->bookedDates = array_unique($bookedDates);
+        }
+
         $idAdmin = $tokoId ? Toko::where('id', $tokoId)->value('id_admin') : null;
 
         return view("user.kostum", [
             'tokos' => $tokos,
+            'bookedDates' => $bookedDates,
             'keterangan' => $keterangan,
             'baju' => $baju,
             'selectedTokoId' => $tokoId,

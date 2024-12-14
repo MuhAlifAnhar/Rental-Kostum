@@ -48,23 +48,23 @@
                                     <p class="card-text bold">{{ $b->nama }}</p>
                                     <p class="card-text bold">{{ $b->deskripsi }}</p>
                                     <p class="card-text">Rp. {{ number_format($b->harga, 0, ',', '.') }}</p>
-                                    <p class="card-text">
-                                        @php
-                                            $latestTransaksi = $b->transaksi
-                                                ->where('status', '!=', 'failed')
-                                                ->sortByDesc('created_at');
-                                        @endphp
-                                        @if ($latestTransaksi)
-                                            @foreach ($latestTransaksi as $transaksi)
-                                                <p>
-                                                    Pesan dari: <strong>{{ $transaksi->date }}</strong>
-                                                    sampai <strong>{{ $transaksi->tanggal_pengembalian }}</strong>
-                                                </p>
+                                    <div class="calendar mt-3 mb-3">
+                                        <div class="d-flex flex-wrap justify-content-center">
+                                            @foreach ($baju as $b)
+                                                @foreach ($b->bookedDates as $date)
+                                                    @php
+                                                        $isBooked = in_array($date, $bookedDates); // Cek apakah tanggal ini sudah dipesan
+                                                    @endphp
+
+                                                    <div
+                                                        class="date-box {{ $isBooked ? 'bg-danger' : 'bg-success' }} text-white m-1">
+                                                        {{ \Carbon\Carbon::parse($date)->format('d') }}
+                                                        <!-- Tampilkan tanggal -->
+                                                    </div>
+                                                @endforeach
                                             @endforeach
-                                        @else
-                                            <em>Belum ada informasi tanggal pemesanan</em>
-                                        @endif
-                                    </p>
+                                        </div>
+                                    </div>
                                     @if ($b->nama_keterangan == 1)
                                         <p class="card-footer bg-danger bold sewa text-white"
                                             data-status="{{ $b->keterangan->nama_keterangan }}">
@@ -89,6 +89,17 @@
             @endif
         </div>
     </div>
+
+    <style>
+        .date-box {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+        }
+    </style>
 
     @include('user._modal-book')
 

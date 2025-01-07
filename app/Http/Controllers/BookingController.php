@@ -32,9 +32,9 @@ class BookingController extends Controller
         $existingTransaksi = Transaksi::where('id_toko', $request->baju)
             ->where(function($query) {
                 $query->where('status', 'pending')
-                      ->orWhere('status', 'success');
+                    ->orWhere('status', 'success');
             })
-            ->first();
+            ->get(); // Mengambil semua transaksi yang memenuhi kriteria
 
         // if ($existingTransaksi) {
         //     // Jika ada transaksi sebelumnya, cek tanggal pengembalian
@@ -43,12 +43,13 @@ class BookingController extends Controller
         //     }
         // }
 
-        if ($existingTransaksi) {
-        // Jika ada transaksi sebelumnya, cek apakah rentang tanggal bertabrakan
+        // Validasi
+        foreach ($existingTransaksi as $transaksi) {
+            // Cek apakah rentang tanggal bertabrakan dengan transaksi yang ada
             if (
-                ($request->date >= $existingTransaksi->date && $request->date <= $existingTransaksi->tanggal_pengembalian) || // Tanggal sewa baru berada di dalam rentang transaksi sebelumnya
-                ($request->datee >= $existingTransaksi->date && $request->datee <= $existingTransaksi->tanggal_pengembalian) || // Tanggal pengembalian baru berada di dalam rentang transaksi sebelumnya
-                ($request->date <= $existingTransaksi->date && $request->datee >= $existingTransaksi->tanggal_pengembalian) // Rentang baru mencakup seluruh rentang transaksi sebelumnya
+                ($request->date >= $transaksi->date && $request->date <= $transaksi->tanggal_pengembalian) || // Tanggal sewa baru berada di dalam rentang transaksi sebelumnya
+                ($request->datee >= $transaksi->date && $request->datee <= $transaksi->tanggal_pengembalian) || // Tanggal pengembalian baru berada di dalam rentang transaksi sebelumnya
+                ($request->date <= $transaksi->date && $request->datee >= $transaksi->tanggal_pengembalian) // Rentang baru mencakup seluruh rentang transaksi sebelumnya
             ) {
                 return back()->withErrors(['baju' => 'Kostum ini tidak tersedia untuk sewa pada rentang tanggal yang dipilih karena bertabrakan dengan pemesanan sebelumnya.']);
             }

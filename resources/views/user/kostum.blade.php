@@ -69,7 +69,7 @@
                                             @endfor
                                         </div>
                                     </div>
-                                    @if ($b->nama_keterangan == 1)
+                                    {{-- @if ($b->nama_keterangan == 1)
                                         <p class="card-footer bg-danger bold sewa text-white"
                                             data-status="{{ $b->keterangan->nama_keterangan }}">
                                             {{ $b->keterangan->nama_keterangan }}
@@ -84,7 +84,10 @@
                                             data-status="{{ $b->keterangan->nama_keterangan }}">
                                             {{ $b->keterangan->nama_keterangan }}
                                         </p>
-                                    @endif
+                                    @endif --}}
+                                    <p class="card-footer bg-success bold sewa text-white" data-status="ready">
+                                        Ready
+                                    </p>
                                 </div>
                             </div>
                         </a>
